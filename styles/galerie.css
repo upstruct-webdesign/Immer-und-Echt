@@ -1,0 +1,23 @@
+.galerie-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 40px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+.galerie-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.galerie-content img{
+  width: 450px;
+  height: 300px;
+  object-fit: cover;
+}
+.galerie-content img:hover{
+  opacity: 0.7;
+  filter: brightness(70%);
+  cursor: pointer;
+}
