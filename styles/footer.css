@@ -1,0 +1,28 @@
+footer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: var(--background-dark);
+}
+footer a {
+  color: var(--background-bright);
+  text-decoration: none;
+  font-size: 18px;
+  transition: text-decoration 0.15s ease, opacity 0.15s ease;
+}
+footer a:hover{
+  text-decoration: underline;
+}
+footer a:active{
+  opacity: 0.6;
+}
+.impressum {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}
+.datenschutz {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
