@@ -14,5 +14,6 @@
 }
 body {
   overflow: auto;
+  padding-bottom: 1000px;
   background-color: var(--background-bright);
 }

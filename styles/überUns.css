@@ -1,0 +1,94 @@
+/* Über Uns Section */
+.überUns-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.überUns-title {
+  color: var(--logo);
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.überUns-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  column-gap: 20px;
+}
+.überUns-image {
+  width: 300px;
+  height: 600px;
+  object-fit: cover;
+}
+.überUns-text {
+  width: 300px;
+  height: 50%;
+  line-height: 25px;
+  font-size: 18px;
+  text-align: center;
+  color: var(--background-dark);
+}
+
+/* Unser Leitmotiv Section */
+.unserLeitmotiv-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+.unserLeitmotiv-title {
+  color: var(--logo);
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.unserLeitmotiv-content {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: space-between;
+  width: 100%;
+}
+.unserLeitmotiv-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+  border-radius: 150px;
+  height: 300px;
+  background-color: var(--background-dark);
+}
+.unserLeitmotiv-box-image {
+  width: 50px;
+  height: 50px;
+}
+.unserLeitmotiv-box-title {
+  color: var(--logo);
+  font-size: 30px;
+  font-weight: bold;
+}
+.unserLeitmotiv-box-text {
+  width: 200px;
+  line-height: 25px;
+  text-align: center;
+  color: var(--background-bright);
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .unserLeitmotiv-content {
+    grid-template-columns: 300px;
+    row-gap: 30px;
+    justify-content: center;
+  }
+}
