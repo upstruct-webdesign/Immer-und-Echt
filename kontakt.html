@@ -39,6 +39,66 @@
           </div>
         </div>
       </div>
+
+      <!-- Kontaktformular -->
+      <div class="kontaktformular">
+        <p class="contact-title">Kontaktiere Uns</p>
+        <p class="contact-infotext">
+          Du hast Fragen, brauchst ein Angebot oder willst einfach mal hallo
+          sagen? Dann melde dich gerne &#8722; wir freuen uns auf deine
+          Nachricht&#33;
+        </p>
+        <div class="contact-container">
+          <div class="contact-name">
+            <p class="contact-name-title">Name</p>
+            <input
+              class="contact-input"
+              type="text"
+              placeholder="Max Mustermann"
+            />
+          </div>
+          <div class="contact-email">
+            <p class="contact-email-title">Email</p>
+            <input
+              class="contact-input"
+              type="text"
+              placeholder="max.mustermann@gmail.com"
+            />
+          </div>
+          <div class="contact-voraussichtlichesDatum">
+            <p class="contact-voraussichtlichesDatum-title">
+              Voraussichtliches Datum
+            </p>
+            <input
+              class="contact-input"
+              type="text"
+              placeholder="12.03.2026/Mitte Dezember/Anfang nächsten Jahres"
+            />
+          </div>
+          <div class="contact-shootingart">
+            <label class="shootingart-title" for="shootingart"
+              >Shootingart</label
+            >
+            <select
+              class="shootingart-content"
+              id="shootingart"
+              name="shootingart"
+              required
+            >
+              <option value="andere">Andere</option>
+              <option value="standesamt">Standesamt</option>
+              <option value="hochzeitsreportage">Hochzeitsreportage</option>
+              <option value="paarshooting">Paarshooting</option>
+            </select>
+          </div>
+
+          <div class="contact-nachricht">
+            <p class="contact-nachricht-title">Nachricht</p>
+            <textarea id="nachricht" placeholder="Ihre Nachricht..."></textarea>
+          </div>
+          <button class="send-button">Senden</button>
+        </div>
+      </div>
     </main>
     <!-- JavaScript Links -->
     <script src="javascript/kontakt.js"></script>
