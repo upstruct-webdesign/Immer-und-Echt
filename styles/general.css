@@ -1,13 +1,37 @@
 :root {
-  --background-dark: rgb(90, 90, 90);
-  --background-bright: rgb(247, 247, 247);
-  --logo: rgb(211, 168, 106);
+  --background-bright: rgb(250, 246, 239);
+  --background-textblock: rgb(235, 226, 211);
+  --logo: rgb(210, 167, 106);
+  --footer: rgb(26, 33, 37);
+  --text: rgb(37, 48, 54);
 }
+/* FONTS */
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/static/Raleway-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/fonts/static/Raleway-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Felix Titling';
+  src: url('/fonts/Felixti.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
 * {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Felix Titling', 'Raleway', arial; /* Schriftart Felix Titling; Schriftart für Text: Raleway */ 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,3 +40,7 @@ body {
   overflow: auto;
   background-color: var(--background-bright);
 }
+
+/* 
+- Link im Header immer größer und fett auf der Seite auf der ich mich befinde
+*/

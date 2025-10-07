@@ -4,25 +4,48 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  margin-top: 50px;
   margin-bottom: 100px;
 }
-.grid1,
-.grid3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: clamp(20px, 5vw, 200px);
-  height: 400px;
+.headline-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 0;
+  color: var(--text);
 }
-.grid2,
-.grid4 {
+.headline{
+  font-size: 26px;
+}
+.headline-text{
+  font-family: 'Raleway';
+  line-height: 25px;
+}
+.collage {
+  width: 1200px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: clamp(20px, 5vw, 200px);
-  height: 400px;
-  justify-items: stretch;
+  grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+  grid-auto-rows: 200px; /* Basishöhe */
+  gap: 10px;
+}
+
+.collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px; /* optional */
+}
+
+/* Hochkant-Bilder */
+.collage .tall {
+  grid-row: span 3;
 }
 
 .image-container {
@@ -52,20 +75,19 @@
 }
 
 .zurGalerie-btn {
-  background-color: var(--background-bright);
-  border: solid 2px var(--background-dark);
+  background-color: var(--background-textblock);
   border-radius: 10px;
-  font-size: 20px;
+  border: none;
+  font-size: 18px;
   font-weight: bold;
   color: var(--logo);
   padding: 10px;
-  transition: color 0.15s ease, background-color 0.15s ease,
-    border-color 0.15s ease, opactity 0.15s ease;
+  margin-top: 40px;
+  transition: color 0.15s ease, background-color 0.15s ease, opactity 0.15s ease;
 }
 .zurGalerie-btn:hover {
   color: var(--background-bright);
   background-color: var(--logo);
-  border-color: var(--logo);
   cursor: pointer;
 }
 .zurGalerie-btn:active {

@@ -16,8 +16,8 @@ header {
   column-gap: clamp(10px, 5vw, 100px);
 }
 .logo-image {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
 }
 .nav-link {
   color: var(--background-bright);
@@ -25,11 +25,9 @@ header {
   letter-spacing: 7px;
   font-size: 14px;
   font-weight: bold;
-  text-shadow: 2px 2px 10px var(--background-bright);
 }
 .nav-link:hover {
   color: var(--logo);
-  text-shadow: 2px 2px 10px var(--logo);
 }
 /* Hero Section */
 .slide-container {
@@ -56,13 +54,11 @@ header {
   top: 0;
   left: -100%;
 }
-span.next,
-span.prev {
+.next,
+.prev {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding: 14px;
-  color: #eee;
   font-size: 24px;
   font-weight: bold;
   transition: 0.5s;
@@ -71,15 +67,14 @@ span.prev {
   cursor: pointer;
   z-index: 1;
 }
-span.next {
+.next {
   right: 20px;
 }
-span.prev {
+.prev {
   left: 20px;
 }
-span.next:hover,
-span.prev:hover {
-  background-color: lightblue;
+.next:hover,
+.prev:hover {
   opacity: 0.8;
 }
 
@@ -130,9 +125,8 @@ span.prev:hover {
     display: none;
   }
 
-  span.next,
-  span.prev {
+  .next,
+  .prev {
     font-size: 18px;
-    padding: 8px;
   }
 }
