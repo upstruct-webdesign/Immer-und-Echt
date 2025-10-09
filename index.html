@@ -1,77 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="images/logo-transparent.png"
-    />
+    <link rel="icon" type="image/x-icon" href="images/logo-transparent.png" />
     <title>Immer Und Echt</title>
     <style>
-      body {
-        margin: 0;
-        background-color: rgb(26, 33, 37);
+      /* -------------------------
+         Grundlayout
+         ------------------------- */
+      :root {
+        --bg-color: rgb(26, 33, 37);
       }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background-color: var(--bg-color);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+
       ::-webkit-scrollbar {
         display: none;
       }
+
       .image-container {
         position: relative;
-      }
-      .bg-image {
         width: 100%;
-        height: 100vh;
-        object-fit: cover;
-        display: block;
-        z-index: -2;
-        opacity: 0.5;
+        min-height: 100vh; /* sichert Vollhöhe */
+        overflow: hidden;
       }
+
+      /* Hintergrundbild: immer mittig und cover */
+      .bg-image {
+        position: absolute;
+        inset: 0; /* top:0; right:0; bottom:0; left:0; */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center; /* wichtig: zentriert das Bild */
+        display: block;
+        z-index: 0;
+        opacity: 0.5;
+        pointer-events: none; /* Klicks gehen nicht auf das Bild */
+      }
+
+      /* Logo: standardmäßig zentriert (Desktop) */
       .logo {
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 320px; /* Desktop-Größe */
+        max-width: 60%;
+        height: auto;
+        display: block;
       }
+
+      /* Socials: horizontal, zentriert am unteren Rand (Desktop) */
       .socials {
         position: absolute;
         left: 50%;
         bottom: 10%;
         transform: translateX(-50%);
+        z-index: 2;
         display: flex;
-        flex-direction: row;
+        gap: 20px;
         align-items: center;
         justify-content: center;
-        column-gap: 20px;
       }
+
+      .socials a {
+        display: inline-block;
+        text-decoration: none;
+      }
+
       .socials a img {
         width: 30px;
         height: 30px;
-        transition: transform 0.15s ease;
+        display: block;
+        transition: transform 0.15s ease, filter 0.15s ease;
+        will-change: transform;
       }
-      .socials a img:hover {
-        transform: scale(1.5);
+
+      .socials a img:hover,
+      .socials a img:focus {
+        transform: scale(1.4);
+        filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+      }
+
+      /* -------------------------
+         Responsive Regeln
+         ------------------------- */
+
+      /* Tablet / kleine Desktops */
+      @media (max-width: 1024px) {
+        .logo {
+          width: 260px;
+          max-width: 55%;
+        }
+        .socials a img {
+          width: 28px;
+          height: 28px;
+        }
+        .socials {
+          bottom: 8%;
+          gap: 16px;
+        }
+      }
+
+      /* Mobile: so wie gewünscht:
+         - Hintergrund mittig (object-position)
+         - Logo oben klein
+         - Socials unten klein
+      */
+      @media (max-width: 800px) {
+        .bg-image {
+          /* optional: etwas stärkere Verdunkelung auf Mobile */
+          opacity: 0.6;
+        }
+
+        /* Logo oben, kleiner */
+        .logo {
+          top: 5%;
+          left: 50%;
+          transform: translateX(-50%); /* nur horizontal zentrieren */
+          width: 200px; /* feste kleinere Größe für Mobile */
+          max-width: 40%;
+        }
+
+        /* Socials unten, kleiner Abstand und icons kleiner */
+        .socials {
+          bottom: 4%;
+          gap: 12px;
+          transform: translateX(-50%); /* horizontal zentrieren */
+        }
+
+        .socials a img {
+          width: 24px;
+          height: 24px;
+        }
+
+        /* Verhindere, dass das Logo / Socials beim sehr kleinen Bildschirm zu sehr überlappen */
+        .image-container {
+          min-height: 100svh; /* bessere mobile viewport handling */
+        }
+      }
+
+      /* Optional: sehr große Displays */
+      @media (min-width: 1600px) {
+        .logo {
+          width: 420px;
+        }
+      }
+      /* Bild leicht nach rechts verschieben bei kleineren Bildschirmen */
+      @media (max-width: 1024px) {
+        .bg-image {
+          object-position: 60% center; /* etwas rechts */
+        }
+      }
+
+      @media (max-width: 800px) {
+        .bg-image {
+          object-position: 20% center; /* noch weiter rechts (Brautpaar mittig) */
+        }
       }
     </style>
   </head>
+
   <body>
-    <div class="image-container">
-      <img class="bg-image" src="images/bg-image.jpeg" />
-      <img class="logo" src="images/logo-transparent.png" />
-      <div class="socials">
-        <a href="https://www.instagram.com/" target="_blank">
-          <img src="images/instagram-icon.png" alt="insta-Icon"
-        /></a>
-        <a href="https://www.facebook.com/" target="_blank">
-          <img src="images/facebook-icon.png" alt="facebook-Icon"
-        /></a>
-        <a href="https://www.google.com/" target="_blank">
-          <img src="images/google-icon.png" alt="google-Icon"
-        /></a>
-      </div>
+    <div class="image-container" role="region" aria-label="Hero section">
+      <img class="bg-image" src="images/bg-image.jpeg" alt="Hintergrundbild" />
+      <img
+        class="logo"
+        src="images/logo-transparent.png"
+        alt="Immer Und Echt Logo"
+      />
+
+      <nav class="socials" aria-label="Social media links">
+        <a
+          href="https://www.instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <img src="images/instagram-icon.png" alt="Instagram" />
+        </a>
+        <a
+          href="https://www.facebook.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+        >
+          <img src="images/facebook-icon.png" alt="Facebook" />
+        </a>
+        <a
+          href="https://www.google.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Google"
+        >
+          <img src="images/google-icon.png" alt="Google" />
+        </a>
+      </nav>
     </div>
   </body>
 </html>
-
-
