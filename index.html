@@ -6,6 +6,12 @@
     <link rel="icon" type="image/x-icon" href="images/logo-transparent.png" />
     <title>Immer Und Echt</title>
     <style>
+      @font-face {
+        font-family: "Raleway";
+        src: url("/fonts/static/Raleway-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+      }
       :root {
         --bg-color: rgb(26, 33, 37);
       }
@@ -88,6 +94,36 @@
         filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
       }
 
+      .footer {
+        position: absolute;
+        left: 50%;
+        bottom: 4%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        column-gap: 8px;
+      }
+      .footer a {
+        text-decoration: none;
+        color: rgb(210, 167, 106);
+        font-family: "Raleway", Arial, "Times New Roman";
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .headline {
+        color: rgb(250, 246, 239);
+        font-family: "Raleway", arial, "Times New Roman";
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+        opacity: 0.6;
+      }
+
       /* Responsive Design */
 
       /* Mobile */
@@ -111,6 +147,14 @@
         }
         .socials a img:hover {
           transform: scale(0.8);
+        }
+        .footer {
+          bottom: 1%;
+          font-size: 12px;
+        }
+        .headline {
+          top: 60%;
+          font-size: 24px;
         }
       }
 
@@ -136,6 +180,14 @@
         .socials a img:hover {
           transform: scale(0.9);
         }
+        .footer {
+          bottom: 1%;
+          font-size: 12px;
+        }
+        .headline {
+          top: 60%;
+          font-size: 26px;
+        }
       }
       /* Tablets */
       @media (min-width: 601px) and (max-width: 768px) {
@@ -159,6 +211,14 @@
         .socials a img:hover {
           transform: scale(1);
         }
+        .footer {
+          bottom: 3%;
+          font-size: 14px;
+        }
+        .headline {
+          top: 60%;
+          font-size: 30px;
+        }
       }
 
       /* Kleine Laptops */
@@ -177,6 +237,13 @@
         .socials a img:hover {
           transform: scale(1.1);
         }
+        .footer {
+          bottom: 3%;
+          font-size: 14px;
+        }
+        .headline {
+          top: 12%;
+        }
       }
 
       /* Standard-Desktop */
@@ -190,10 +257,10 @@
           transform: translateX(-50%);
         }
         .socials a img {
-          transform: scale(1);
+          transform: scale(0.9);
         }
         .socials a img:hover {
-          transform: scale(1.2);
+          transform: scale(1.1);
         }
       }
 
@@ -208,10 +275,10 @@
           transform: translateX(-50%);
         }
         .socials a img {
-          transform: scale(1.1);
+          transform: scale(0.9);
         }
         .socials a img:hover {
-          transform: scale(1.3);
+          transform: scale(1.1);
         }
       }
     </style>
@@ -219,16 +286,17 @@
 
   <body>
     <div class="image-container" role="region" aria-label="Hero section">
-      <img class="bg-image" src="images/bg-image.jpeg" alt="Hintergrundbild" />
+      <img class="bg-image" src="images/bg-image.jpg" alt="Hintergrundbild" />
+      <h1 class="headline">Coming Soon...</h1>
       <img
         class="logo"
-        src="images/logo-transparent.png"
+        src="images/logo-transparent.svg"
         alt="Immer Und Echt Logo"
       />
 
       <nav class="socials" aria-label="Social media links">
         <a
-          href="https://www.instagram.com/"
+          href="https://www.instagram.com/immer.und.echt.photography?igsh=MWlramE5d2JsdWh0cw%3D%3D&utm_source=qr"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -236,7 +304,7 @@
           <img src="images/instagram-icon.png" alt="Instagram" />
         </a>
         <a
-          href="https://www.facebook.com/"
+          href="https://www.facebook.com/share/1CoVDLjKvb/?mibextid=wwXIfr"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -244,7 +312,7 @@
           <img src="images/facebook-icon.png" alt="Facebook" />
         </a>
         <a
-          href="https://www.google.com/"
+          href="https://share.google/973S0k8PbVc0fRdtN"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Google"
@@ -252,6 +320,10 @@
           <img src="images/google-icon.png" alt="Google" />
         </a>
       </nav>
+      <div class="footer">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
     </div>
   </body>
 </html>
